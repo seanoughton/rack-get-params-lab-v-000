@@ -17,7 +17,7 @@ class Application
       end
     elsif req.path.match(/add/)
       #do something
-      #search_term = req.params["q"]
+      #search_term = req.params["item"]
     elsif req.path.match(/search/)
       search_term = req.params["q"]
       resp.write handle_search(search_term)
