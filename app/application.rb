@@ -19,6 +19,9 @@ class Application
       #do something
       add_item = req.params["item"]
       if @@items.include?(add_item)
+      else
+        resp.write "Couldn't find #{add_item}"
+      end
     elsif req.path.match(/search/)
       search_term = req.params["q"]
       resp.write handle_search(search_term)
