@@ -12,11 +12,12 @@ class Application
         resp.write "#{item}\n"
       end
     elsif req.path.match(/cart/)
-      @@cart.each do |cart_item|
-        resp.write "#{cart_item}\n"
-      end
       if @@cart.size == 0
         resp.write "Your cart is empty"
+      else
+        @@cart.each do |cart_item|
+          resp.write "#{cart_item}\n"
+        end
       end
     elsif req.path.match(/add/)
       add_item = req.params["item"]
