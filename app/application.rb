@@ -19,7 +19,7 @@ class Application
       #do something
       add_item = req.params["item"]
       if @@items.include?(add_item)
-        @@items << add_item
+        @@cart << add_item
       else
         resp.write "Couldn't find #{add_item}"
       end
